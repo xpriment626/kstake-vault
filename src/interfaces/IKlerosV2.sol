@@ -18,20 +18,20 @@ interface IKlerosV2 {
      *  and the minimum number of jurors required (next 32 bytes).
      *  @return cost The arbitration cost.
      */
-    function arbitrationCost(bytes memory _extraData) public view override returns (uint256 cost);
+    function arbitrationCost(bytes memory _extraData) external view returns (uint256 cost);
 
      /** @dev Gets the cost of appealing a specified dispute.
      *  @param _disputeID The ID of the dispute.
      *  @return cost The appeal cost.
      */
-    function appealCost(uint256 _disputeID) public view returns (uint256 cost);
+    function appealCost(uint256 _disputeID) external view returns (uint256 cost);
 
     /** @dev Gets the start and the end of a specified dispute's current appeal period.
      *  @param _disputeID The ID of the dispute.
      *  @return start The start of the appeal period.
      *  @return end The end of the appeal period.
      */
-    function appealPeriod(uint256 _disputeID) public view returns (uint256 start, uint256 end);
+    function appealPeriod(uint256 _disputeID) external view returns (uint256 start, uint256 end);
 
     /***********************
       Dispute Kit Functions
